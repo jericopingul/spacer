@@ -1,0 +1,17 @@
+{
+  "name": "spacer",
+  "displayName": "spacer",
+  "expo": {
+    "name": "spacer",
+    "slug": "spacer",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
