@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { Appbar, FAB } from 'react-native-paper';
 import IdleScreen from './IdleScreen';
 import LowRiskScreen from './LowRiskScreen';
@@ -52,9 +52,11 @@ const styles = StyleSheet.create({
     // backgroundColor: 'white',
   },
   fab: {
+    backgroundColor: 'white',
     position: 'absolute',
     margin: 16,
     right: 0,
     bottom: 64,
+    zIndex: 100,
   },
 });

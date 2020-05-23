@@ -1,7 +1,7 @@
 import React from 'react';
-import { ScrollView, Text, StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
 import Disease from '../assets/disease.svg';
-import { Headline, Caption, Subheading } from 'react-native-paper';
+import { Headline, Subheading } from 'react-native-paper';
 
 const HighRiskScreen = () => {
   return (
