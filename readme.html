@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Expo Ejected App</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="expo-ejected-app">Expo Ejected App</h1>
+<p>As Bluetooth is currently not supported in Expo. <a href="https://expo.canny.io/feature-requests/p/bluetooth-api">https://expo.canny.io/feature-requests/p/bluetooth-api</a></p>
+<p>This app has been ejected and some setup in iOS and Android development is required.</p>
+<p>More detailed information can be found here:</p>
+<p><a href="https://blog.expo.io/so-you-want-to-build-a-bluetooth-app-with-react-native-and-expo-6ea6a31a151d">https://blog.expo.io/so-you-want-to-build-a-bluetooth-app-with-react-native-and-expo-6ea6a31a151d</a></p>
+<h2 id="android">Android</h2>
+<p>To run the app on Android, Android Studio is required.</p>
+<p>You will also have to add the following environment variable.</p>
+<pre><code><code><div>export ANDROID_SDK_ROOT=/Users/jericopingul/Library/Android/sdk
+</div></code></code></pre>
+<p>It's best to add it to the end of your <code>.zshrc</code> file.</p>
+<pre><code><code><div>/Users/&lt;your-user-name&gt;/Library/Android/sdk/
+</div></code></code></pre>
+<p>To install and launch your app on the device</p>
+<pre><code class="language-bash"><div>react-native run-android
+</div></code></pre>
+<p>To see devices available</p>
+<pre><code class="language-bash"><div>./adb devices
+</div></code></pre>
+<p>To connect device to dev server running on your development machine. Method using adb reverse.</p>
+<pre><code class="language-bash"><div>./adb -s &lt;device name&gt; reverse tcp:8081 tcp:8081
+</div></code></pre>
+<h1 id="location-services">Location Services</h1>
+<p>Must ask user first for location services as well to be able to use bluetooth.</p>
+<p><a href="https://github.com/Polidea/react-native-ble-plx/issues/248#issuecomment-379592338">https://github.com/Polidea/react-native-ble-plx/issues/248#issuecomment-379592338</a></p>
+<h3 id="further-instructions-to-follow">Further instructions to follow</h3>
+<p><a href="https://reactnative.dev/docs/running-on-device">https://reactnative.dev/docs/running-on-device</a></p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="if-there-is-another-app-with-same-packages-installed">If there is another app with same packages installed</h3>
+<pre><code class="language-bash"><div>./adb uninstall &lt;com.packagename.appname&gt;
+</div></code></pre>
+<h3 id="if-the-development-port-is-being-used">If the development port is being used</h3>
+<p>Check what is listening to port</p>
+<pre><code class="language-bash"><div>lsof -nP -iTCP:8081 | grep LISTEN
+</div></code></pre>
+<p>If safe to proceed kill process</p>
+<pre><code class="language-bash"><div><span class="hljs-built_in">kill</span> -9 &lt;PID&gt;
+<span class="hljs-comment"># kill -9 60401</span>
+</div></code></pre>
+<h3 id="ios-simulator-has-error-for-svg">iOS simulator has error for svg</h3>
+<p>No fix for it</p>
+
+    </body>
+    </html>

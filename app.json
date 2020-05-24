@@ -13,12 +13,13 @@
       "sourceExts": ["js", "jsx", "ts", "tsx", "svg"]
     },
     "ios": {
-      "bundleIdentifier": "com.physicianeer.spacer",
+      "bundleIdentifier": "com.jericopingul.spacer",
       "buildNumber": "1.0.0"
     },
     "android": {
-      "package": "com.physicianeer.spacer",
+      "package": "com.jericopingul.spacer",
       "versionCode": 1
-    }
+    },
+    "entryPoint": "node_modules/expo/AppEntry.js"
   }
 }

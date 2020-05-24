@@ -3,20 +3,15 @@ import { View, StyleSheet } from 'react-native';
 import Crowded from '../assets/crowded.svg';
 import { Headline, Subheading, Surface } from 'react-native-paper';
 
-const IdleScreen = () => {
+const IdleScreen = ({ onImgPress }: { onImgPress: Function }) => {
   return (
     <View style={styles.screen}>
       <Headline style={styles.headline}>
         Space Out to Stop the Spread of COVID19
       </Headline>
       <Surface style={styles.surface}>
-        <Crowded
-          width={128}
-          height={128}
-          onPress={() => console.log('pressed svg')}
-        />
+        <Crowded width={128} height={128} onPress={() => onImgPress()} />
       </Surface>
-
       <Subheading style={styles.subHeading}>Scan for nearby devices</Subheading>
     </View>
   );

@@ -130,11 +130,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.spacer"
+        applicationId 'com.physicianeer.spacer'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
     }
     splits {
         abi {
@@ -181,6 +181,7 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-ble-plx')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.facebook.react:react-native:+"  // From node_modules
     addUnimodulesDependencies()
